@@ -1,0 +1,4 @@
+/* ORION page-view beacon v0.1 — franchise-standard skeleton.
+ * No cookies, no fingerprinting, respects DNT. Same pattern as the
+ * Golden Hour site; only the `site` slug differs. Aggregate stats only. */
+(function(){try{if(navigator.doNotTrack==="1"||window.doNotTrack==="1")return;var k=window.ORION_ANALYTICS_KEY;if(!k||k.indexOf("__PASTE_")===0)return;var r="";try{r=document.referrer?new URL(document.referrer).hostname:""}catch(e){}var u=null;try{u=new URLSearchParams(location.search).get("utm_source")}catch(e){}fetch("https://ypfhcqeispdunewubxjm.supabase.co/rest/v1/page_views?apikey="+encodeURIComponent(k),{method:"POST",headers:{"Content-Type":"application/json","Prefer":"return=minimal"},body:JSON.stringify({site:"orion-reports",path:location.pathname,referrer_host:r||null,screen_w:window.screen?window.screen.width:null,screen_h:window.screen?window.screen.height:null,utm_source:u}),keepalive:true}).catch(function(){})}catch(e){}})();
