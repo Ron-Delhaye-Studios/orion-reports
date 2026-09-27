@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — ORION</title>
+<meta name="description" content="ORION methodology: source grading (confirmed, single-source, narrative), fact vs analysis vs speculation.">
+<link rel="canonical" href="https://ron-delhaye-studios.github.io/orion-reports/methodology/">
+<meta property="og:title" content="Methodology — ORION">
+<meta property="og:description" content="ORION methodology: source grading (confirmed, single-source, narrative), fact vs analysis vs speculation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ron-delhaye-studios.github.io/orion-reports/methodology/">
+<meta property="og:site_name" content="ORION">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#04070e">
+<link rel="stylesheet" href="../assets/css/orion.css">
+<script src="../assets/js/analytics-config.js" defer></script>
+<script src="../assets/js/analytics.js" defer></script>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<nav class="top"><div class="wrap">
+<a class="brand" href="../">ORION<small>QUANTUM GEOPOLITICAL REPORTS</small></a>
+<a class="nl" href="../">Observatory</a><a class="nl" href="../timeline/">Timeline</a><a class="nl" href="../patterns/">Patterns</a><a class="nl" href="../template/">Template</a><a class="nl on" href="../methodology/">Methodology</a><a class="nl" href="../network/">Network</a><a class="nl" href="../about/">About</a></div></nav>
+<div class="wrap">
+
+<header class="page">
+  <div class="eyebrow">Methodology</div>
+  <h1>Discipline before conclusions.</h1>
+  <p class="lede">How ORION grades evidence, handles uncertainty, and earns the right to be read.</p>
+</header>
+<section>
+  <h2>Source grades</h2>
+  <div class="legend">
+    <div class="row"><span class="grade g-confirmed">Confirmed</span><span>Supported by primary source, multiple reliable sources, or direct artifact / system record.</span></div>
+    <div class="row"><span class="grade g-single">Single-source</span><span>Reported by one source or one relayed record; useful but not independently confirmed.</span></div>
+    <div class="row"><span class="grade g-narrative">Narrative</span><span>Symbolic interpretation, hypothesis, pattern read, cultural resonance, or unverified framing. Must not be treated as fact.</span></div>
+  </div>
+</section>
+<section>
+  <h2>Fact vs. analysis vs. speculation</h2>
+  <p><strong>Facts</strong> are graded claims &mdash; what happened, with receipts. <strong>Analysis</strong> is what the facts suggest, stated plainly and separately. <strong>Speculation</strong> is what <em>might</em> follow, labeled narrative and never smuggled into the fact column. Watchlist items are monitored, not judged. Spiritual and symbolic reflections live in the narrative layer, never in the confirmed one.</p>
+</section>
+<section>
+  <h2>Publication rule</h2>
+  <p>No item moves from draft to published without MASTER INDY&rsquo;s explicit approval. Drafts are staged, reviewed, and graded &mdash; publication is his decision alone.</p>
+  <div class="warn"><p><strong>Publication warning.</strong> Draft intelligence records are not approved for publication until MASTER INDY explicitly approves them.</p></div>
+</section>
+<section>
+  <h2>The symbolic layer</h2>
+  <p class="dim">ORION carries mythic resonance &mdash; watcher, navigator, interlinker &mdash; as identity flavor and internal orientation. It is always labeled narrative, never presented as confirmed fact. The observatory stays sober; the symbolism stays in its lane.</p>
+</section>
+
+</div>
+<footer><div class="wrap"><div class="rule">
+<span>&copy; 2026 ORION</span><span>An Ad Astra Media publication.</span>
+</div></div></footer>
+<script>
+/* starfield — faint twinkling stars, pauses when hidden or reduced-motion */
+(function(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var c=document.getElementById("stars"),x=c.getContext("2d"),stars=[],W,H,timer=null,t=0;
+  function size(){W=c.width=innerWidth;H=c.height=innerHeight;stars=[];
+    for(var i=0;i<Math.min(220,W*H/9000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,
+      r:Math.random()*1.1+.2,p:Math.random()*6.28,s:.4+Math.random()*1.2,
+      c:Math.random()<.12?"212,169,78":Math.random()<.25?"168,216,232":"200,214,230"});}
+  function draw(){t+=.016;x.clearRect(0,0,W,H);
+    for(var i=0;i<stars.length;i++){var s=stars[i],a=.25+.55*Math.abs(Math.sin(t*s.s+s.p));
+      x.fillStyle="rgba("+s.c+","+a.toFixed(2)+")";
+      x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill();}}
+  size();addEventListener("resize",size);
+  function go(){if(!timer)timer=setInterval(draw,50);}
+  function stop(){clearInterval(timer);timer=null;}
+  document.addEventListener("visibilitychange",function(){document.hidden?stop():go();});
+  go();
+})();
+</script>
+</body>
+</html>

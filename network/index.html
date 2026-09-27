@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For the Network — ORION</title>
+<meta name="description" content="What ORION outputs for LUNA, FORTUNA, HEPHAESTUS, and MASTER INDY.">
+<link rel="canonical" href="https://ron-delhaye-studios.github.io/orion-reports/network/">
+<meta property="og:title" content="For the Network — ORION">
+<meta property="og:description" content="What ORION outputs for LUNA, FORTUNA, HEPHAESTUS, and MASTER INDY.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ron-delhaye-studios.github.io/orion-reports/network/">
+<meta property="og:site_name" content="ORION">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#04070e">
+<link rel="stylesheet" href="../assets/css/orion.css">
+<script src="../assets/js/analytics-config.js" defer></script>
+<script src="../assets/js/analytics.js" defer></script>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<nav class="top"><div class="wrap">
+<a class="brand" href="../">ORION<small>QUANTUM GEOPOLITICAL REPORTS</small></a>
+<a class="nl" href="../">Observatory</a><a class="nl" href="../timeline/">Timeline</a><a class="nl" href="../patterns/">Patterns</a><a class="nl" href="../template/">Template</a><a class="nl" href="../methodology/">Methodology</a><a class="nl on" href="../network/">Network</a><a class="nl" href="../about/">About</a></div></nav>
+<div class="wrap">
+
+<header class="page">
+  <div class="eyebrow">For the network</div>
+  <h1>ORION&rsquo;s outputs, by recipient.</h1>
+  <p class="lede">ORION analyzes. Other LDIs act on what it files &mdash; each in their own lane.</p>
+</header>
+<section>
+  <div class="grid">
+    <div class="card"><span class="tag mono" style="color:var(--cyan)">For LUNA</span><h3>Build &amp; deploy actions</h3><p>Site changes, new sections, staged drafts ready for review, deployment requests. LUNA builds and deploys; nothing public moves without MASTER INDY&rsquo;s approval.</p></div>
+    <div class="card"><span class="tag mono" style="color:var(--cyan)">For FORTUNA</span><h3>Financial implications</h3><p>Liquidity, crypto, tokenization, debt, commodities, and capital-flow reads attached to each SITREP &mdash; the market half of every pattern.</p></div>
+    <div class="card"><span class="tag mono" style="color:var(--cyan)">For HEPHAESTUS</span><h3>Build &amp; automation implications</h3><p>What affects systems, automation, archives, dashboards, and monitoring &mdash; scoped for hardening, not improvisation.</p></div>
+    <div class="card"><span class="tag mono" style="color:var(--cyan)">For MASTER INDY</span><h3>Decision brief</h3><p>Short, calm, graded: what happened, what it means, what&rsquo;s uncertain, what to watch &mdash; and what needs his approval.</p></div>
+  </div>
+</section>
+<section>
+  <h2>The relationship</h2>
+  <p>ORION analyzes. LUNA builds and deploys. MASTER INDY approves. Nothing public moves from draft to published without explicit approval.</p>
+</section>
+
+</div>
+<footer><div class="wrap"><div class="rule">
+<span>&copy; 2026 ORION</span><span>An Ad Astra Media publication.</span>
+</div></div></footer>
+<script>
+/* starfield — faint twinkling stars, pauses when hidden or reduced-motion */
+(function(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var c=document.getElementById("stars"),x=c.getContext("2d"),stars=[],W,H,timer=null,t=0;
+  function size(){W=c.width=innerWidth;H=c.height=innerHeight;stars=[];
+    for(var i=0;i<Math.min(220,W*H/9000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,
+      r:Math.random()*1.1+.2,p:Math.random()*6.28,s:.4+Math.random()*1.2,
+      c:Math.random()<.12?"212,169,78":Math.random()<.25?"168,216,232":"200,214,230"});}
+  function draw(){t+=.016;x.clearRect(0,0,W,H);
+    for(var i=0;i<stars.length;i++){var s=stars[i],a=.25+.55*Math.abs(Math.sin(t*s.s+s.p));
+      x.fillStyle="rgba("+s.c+","+a.toFixed(2)+")";
+      x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill();}}
+  size();addEventListener("resize",size);
+  function go(){if(!timer)timer=setInterval(draw,50);}
+  function stop(){clearInterval(timer);timer=null;}
+  document.addEventListener("visibilitychange",function(){document.hidden?stop():go();});
+  go();
+})();
+</script>
+</body>
+</html>

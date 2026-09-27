@@ -1,0 +1,35 @@
+{
+  "events": [
+    {
+      "id": "seed-orion-architecture-20260726",
+      "occurred_at": "2026-07-26T00:00:00Z",
+      "origin": "orion",
+      "title": "ORION active architecture record added to LDI OS",
+      "summary": "ORION was added as an active architecture record with canonical boundary, CODEX build directive, watchlist/scenario seed, source registry/signal tracker, and LDI integration notes.",
+      "actors": [
+        "ORION",
+        "MASTER INDY",
+        "LUNA",
+        "FORTUNA",
+        "HEPHAESTUS",
+        "CODEX"
+      ],
+      "regions": [
+        "LDI Network"
+      ],
+      "narrative_tags": [
+        "ldi-architecture",
+        "orion",
+        "codex",
+        "luna",
+        "qpw-hub"
+      ],
+      "event_type": "architecture",
+      "source_grade": "confirmed",
+      "sources": [
+        "MASTER INDY / ORION Drive record as relayed"
+      ],
+      "status": "draft"
+    }
+  ]
+}

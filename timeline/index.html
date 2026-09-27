@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline — ORION</title>
+<meta name="description" content="The shared ORION × FORTUNA event timeline: geopolitical and market events, source-graded.">
+<link rel="canonical" href="https://ron-delhaye-studios.github.io/orion-reports/timeline/">
+<meta property="og:title" content="Timeline — ORION">
+<meta property="og:description" content="The shared ORION × FORTUNA event timeline: geopolitical and market events, source-graded.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ron-delhaye-studios.github.io/orion-reports/timeline/">
+<meta property="og:site_name" content="ORION">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#04070e">
+<link rel="stylesheet" href="../assets/css/orion.css">
+<script src="../assets/js/analytics-config.js" defer></script>
+<script src="../assets/js/analytics.js" defer></script>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<nav class="top"><div class="wrap">
+<a class="brand" href="../">ORION<small>QUANTUM GEOPOLITICAL REPORTS</small></a>
+<a class="nl" href="../">Observatory</a><a class="nl on" href="../timeline/">Timeline</a><a class="nl" href="../patterns/">Patterns</a><a class="nl" href="../template/">Template</a><a class="nl" href="../methodology/">Methodology</a><a class="nl" href="../network/">Network</a><a class="nl" href="../about/">About</a></div></nav>
+<div class="wrap">
+
+<header class="page">
+  <div class="eyebrow">Timeline</div>
+  <h1>The shared event log.</h1>
+  <p class="lede">One timeline, two lenses &mdash; ORION files geopolitical events, FORTUNA files market events. Rendered live from the event archive.</p>
+</header>
+<section>
+  <h2>Events</h2>
+  <div id="feed"><div class="empty"><div class="t mono">LOADING ARCHIVE&hellip;</div></div></div>
+</section>
+<script>
+fetch("events.json").then(function(r){return r.json();}).then(function(d){
+  var f=document.getElementById("feed");
+  if(!d.events||!d.events.length){f.innerHTML='<div class="empty"><div class="t mono">ARCHIVE EMPTY</div><p>No events filed yet.</p></div>';return;}
+  f.innerHTML=d.events.map(function(e){
+    var g=e.source_grade==="confirmed"?"g-confirmed":e.source_grade==="narrative"?"g-narrative":"g-single";
+    var st=e.status==="published"?'<span class="stag st-published">Published</span>'
+      :e.status==="approved"?'<span class="stag st-approved">Approved</span>'
+      :e.status==="awaiting"?'<span class="stag st-awaiting">Awaiting approval</span>'
+      :'<span class="stag st-draft">Draft</span>';
+    var tags=(e.narrative_tags||[]).map(function(t){return '<span class="chip">'+t+'</span>';}).join("");
+    return '<div class="event">'+st+' <span class="grade '+g+'">'+e.source_grade+'</span>'
+      +'<h3 style="margin-top:8px">'+e.title+'</h3>'
+      +'<div class="meta">'+e.occurred_at+' &middot; origin: '+e.origin+'</div>'
+      +'<p class="dim">'+e.summary+'</p>'
+      +'<div class="meta">Actors: '+(e.actors||[]).join(", ")+' &middot; Regions: '+(e.regions||[]).join(", ")+'</div>'
+      +'<div class="tags chips">'+tags+'</div></div>';
+  }).join("");
+}).catch(function(){
+  document.getElementById("feed").innerHTML='<div class="empty"><div class="t mono">ARCHIVE UNAVAILABLE</div><p>Could not load the event archive.</p></div>';
+});
+</script>
+
+</div>
+<footer><div class="wrap"><div class="rule">
+<span>&copy; 2026 ORION</span><span>An Ad Astra Media publication.</span>
+</div></div></footer>
+<script>
+/* starfield — faint twinkling stars, pauses when hidden or reduced-motion */
+(function(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var c=document.getElementById("stars"),x=c.getContext("2d"),stars=[],W,H,timer=null,t=0;
+  function size(){W=c.width=innerWidth;H=c.height=innerHeight;stars=[];
+    for(var i=0;i<Math.min(220,W*H/9000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,
+      r:Math.random()*1.1+.2,p:Math.random()*6.28,s:.4+Math.random()*1.2,
+      c:Math.random()<.12?"212,169,78":Math.random()<.25?"168,216,232":"200,214,230"});}
+  function draw(){t+=.016;x.clearRect(0,0,W,H);
+    for(var i=0;i<stars.length;i++){var s=stars[i],a=.25+.55*Math.abs(Math.sin(t*s.s+s.p));
+      x.fillStyle="rgba("+s.c+","+a.toFixed(2)+")";
+      x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill();}}
+  size();addEventListener("resize",size);
+  function go(){if(!timer)timer=setInterval(draw,50);}
+  function stop(){clearInterval(timer);timer=null;}
+  document.addEventListener("visibilitychange",function(){document.hidden?stop():go();});
+  go();
+})();
+</script>
+</body>
+</html>
