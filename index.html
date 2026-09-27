@@ -12,7 +12,8 @@
 <meta property="og:url" content="https://ron-delhaye-studios.github.io/orion-reports/">
 <meta property="og:site_name" content="ORION">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#04070e">
+<meta name="theme-color" content="#0A1428">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/orion.css">
 <script src="assets/js/analytics-config.js" defer></script>
 <script src="assets/js/analytics.js" defer></script>
@@ -20,75 +21,63 @@
 <body>
 <canvas id="stars" aria-hidden="true"></canvas>
 <nav class="top"><div class="wrap">
-<a class="brand" href="">ORION<small>QUANTUM GEOPOLITICAL REPORTS</small></a>
-<a class="nl on" href="">Observatory</a><a class="nl" href="timeline/">Timeline</a><a class="nl" href="patterns/">Patterns</a><a class="nl" href="template/">Template</a><a class="nl" href="methodology/">Methodology</a><a class="nl" href="network/">Network</a><a class="nl" href="about/">About</a></div></nav>
+<a class="brand" href=""><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="13.5" stroke="#D9A437" stroke-width="1.4"/><circle cx="16" cy="16" r="9.5" stroke="#D9A437" stroke-width="0.7" opacity="0.5"/><path d="M16 7l2.1 6.9L25 16l-6.9 2.1L16 25l-2.1-6.9L7 16l6.9-2.1z" fill="#D9A437"/></svg><span class="wm">ORION<small>GEOPOLITICAL INTELLIGENCE OBSERVATORY</small></span></a>
+<a class="nl on" href="">Observatory</a><a class="nl" href="reports/">Reports</a><a class="nl" href="timeline/">Timeline</a><a class="nl" href="watchlist/">Watchlist</a><a class="nl" href="watchlist/#scenarios">Scenarios</a><a class="nl" href="patterns/">Pattern Links</a><a class="nl" href="methodology/">Methodology</a><a class="nl" href="about/">About</a></div></nav>
+
+<div class="hero"><div class="limb"></div>
+  <div class="hero-kicker">A calmer view of a complex world</div>
+  <div class="hero-title">ORION</div>
+  <div class="hero-sub">Geopolitical Intelligence Observatory</div>
+  <p class="hero-tag">Transforming global signals into structured, source-aware intelligence.</p>
+  <div class="hero-cats"><b>GEOPOLITICS</b> &middot; <b>FINANCE</b> &middot; <b>TECHNOLOGY</b> &middot; <b>NARRATIVES</b> &middot; <b>INSTITUTIONS</b> &middot; <b>PEOPLE</b></div>
+  <div class="hero-btns">
+    <a class="btn btn-primary" href="reports/">Latest Brief</a>
+    <a class="btn btn-ghost" href="timeline/">Explore</a>
+  </div>
+  <div class="hero-icons">
+    <div class="hicon"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span><span>Global<br>Events</span></div>
+    <div class="hicon"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M21 20H3"/></svg></span><span>Financial<br>Impacts</span></div>
+    <div class="hicon"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span>Technology<br>Trends</span></div>
+    <div class="hicon"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3.5 3.5 0 010 7M21 20c0-2.8-1.9-5.1-4.5-5.8"/></svg></span><span>Narrative<br>Shifts</span></div>
+    <div class="hicon"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 5l1.8 5.2L19 12l-5.2 1.8L12 19l-1.8-5.2L5 12l5.2-1.8z" fill="currentColor" stroke="none"/></svg></span><span>Scenario<br>Tracking</span></div>
+  </div>
+</div>
+
 <div class="wrap">
 
-<header class="page">
-  <div class="eyebrow">Observatory</div>
-  <h1>Separate the signal from the noise.</h1>
-  <p class="lede">ORION is a geopolitical intelligence observatory built to separate signal from noise. It tracks global events, financial stress, technological acceleration, narrative shifts, and strategic pressure points &mdash; with clear source grading, disciplined uncertainty, and calm analysis.</p>
-</header>
-<section>
-  <h2>Mission</h2>
-  <p>ORION is a geopolitical intelligence observatory for the LDI network. Its mission is to transform fragmented global signals into calm, structured, source-aware intelligence. ORION tracks geopolitical pressure, financial stress, technological acceleration, institutional movement, narrative shifts, and scenario evolution &mdash; always separating confirmed facts, analysis, speculation, and watchlist items.</p>
-  <p class="dim" style="margin-top:10px">ORION shares one event timeline with FORTUNA&rsquo;s market desk. Geopolitics through one lens, markets through the other &mdash; the patterns between them are the product.</p>
-</section>
-<section>
-  <h2>Latest approved brief</h2>
+<section class="blk">
+  <h2 class="sec">Latest approved brief</h2>
   <div class="empty">
-    <div class="t mono">FEED STANDBY</div>
+    <div class="t">FEED STANDBY</div>
     <p>First briefing in preparation. Nothing fabricated, nothing backfilled &mdash; the feed opens when the first verified SITREP is filed and approved by MASTER INDY.</p>
   </div>
 </section>
-<section>
-  <h2>Watchlist</h2>
-  <p class="dim">Persistent watch areas. Assessments pending &mdash; categories only, no claims yet.</p>
-  <div class="chips">
-    <span class="chip">Debt / liquidity / sovereign finance</span>
-    <span class="chip">Central banks</span>
-    <span class="chip">Tokenization / RWA / crypto regulation</span>
-    <span class="chip">Middle East</span>
-    <span class="chip">Russia / Ukraine / NATO</span>
-    <span class="chip">China / Taiwan / Indo-Pacific</span>
-    <span class="chip">Energy &amp; commodities</span>
-    <span class="chip">AI infrastructure</span>
-    <span class="chip">Cyber &amp; information warfare</span>
-    <span class="chip">Institutional legitimacy</span>
-    <span class="chip">Social unrest</span>
-    <span class="chip">Space / satellites / undersea infrastructure</span>
-  </div>
+<section class="blk">
+  <h2 class="sec">The observatory</h2>
+  <p class="sub">What ORION does, in one paragraph.</p>
+  <p>ORION is a geopolitical intelligence observatory for the LDI network. Its mission is to transform fragmented global signals into calm, structured, source-aware intelligence &mdash; tracking geopolitical pressure, financial stress, technological acceleration, institutional movement, narrative shifts, and scenario evolution, always separating confirmed facts, analysis, speculation, and watchlist items.</p>
+  <p class="dim" style="margin-top:10px">ORION shares one event timeline with FORTUNA&rsquo;s market desk. Geopolitics through one lens, markets through the other &mdash; the patterns between them are the product. <a href="patterns/">How pattern links work &rarr;</a></p>
 </section>
-<section>
-  <h2>Scenario trees</h2>
-  <p class="dim">Scenario tracking, not prediction. All scenarios currently forming &mdash; signals pending.</p>
-  <div class="grid">
-    <div class="card"><span class="stag st-draft">Forming</span><h3>Managed Instability</h3></div>
-    <div class="card"><span class="stag st-draft">Forming</span><h3>Controlled Escalation</h3></div>
-    <div class="card"><span class="stag st-draft">Forming</span><h3>Liquidity Shock</h3></div>
-    <div class="card"><span class="stag st-draft">Forming</span><h3>Structural Break</h3></div>
-    <div class="card"><span class="stag st-draft">Forming</span><h3>Technology Acceleration Shock</h3></div>
-    <div class="card"><span class="stag st-draft">Forming</span><h3>Narrative / Legitimacy Crisis</h3></div>
-  </div>
-</section>
-<section>
-  <h2>Source grades</h2>
+<section class="blk">
+  <h2 class="sec">Source grades</h2>
+  <p class="sub">Every claim ORION files carries one of three grades. Read the grade before the conclusion.</p>
   <div class="legend">
-    <div class="row"><span class="grade g-confirmed">Confirmed</span><span>Supported by primary or multiple reliable sources.</span></div>
-    <div class="row"><span class="grade g-single">Single-source</span><span>One source or relay &mdash; useful, not corroborated.</span></div>
-    <div class="row"><span class="grade g-narrative">Narrative</span><span>Interpretation, hypothesis, or pattern read &mdash; never treated as fact.</span></div>
+    <div class="row"><span class="badge g-confirmed">Confirmed</span><span>Supported by primary or multiple reliable sources.</span></div>
+    <div class="row"><span class="badge g-single">Single-source</span><span>One source or relay &mdash; useful, not corroborated.</span></div>
+    <div class="row"><span class="badge g-narrative">Narrative</span><span>Interpretation, hypothesis, or pattern read &mdash; never treated as fact.</span></div>
   </div>
-  <p class="dim" style="margin-top:10px"><a href="../methodology/">Full methodology &rarr;</a></p>
+  <p class="dim" style="margin-top:12px"><a href="methodology/">Full methodology &rarr;</a></p>
 </section>
-<section>
-  <h2>How to read ORION</h2>
-  <p>Every item carries a <strong>source grade</strong> and a <strong>status</strong>. <span class="stag st-draft">Draft</span> means unreviewed. <span class="stag st-awaiting">Awaiting approval</span> means staged for MASTER INDY. Nothing reaches <span class="stag st-published">Published</span> without his explicit approval.</p>
-  <p class="dim">Read grades before conclusions. Watchlists are monitored, not judged. Scenarios are tracked, not predicted. The symbolic layer &mdash; myth, metaphor, resonance &mdash; is always labeled narrative.</p>
+<section class="blk">
+  <h2 class="sec">How to read ORION</h2>
+  <p>Every item carries a <strong>source grade</strong> and a <strong>status</strong>. <span class="badge st-draft">Draft</span> means unreviewed. <span class="badge st-awaiting">Awaiting approval</span> means staged for MASTER INDY. Nothing reaches <span class="badge st-published">Published</span> without his explicit approval.</p>
+  <p class="dim" style="margin-top:10px">Watchlists are monitored, not judged. Scenarios are tracked, not predicted. The symbolic layer &mdash; myth, metaphor, resonance &mdash; is always labeled narrative.</p>
 </section>
 
 </div>
 <footer><div class="wrap"><div class="rule">
-<span>&copy; 2026 ORION</span><span>An Ad Astra Media publication.</span>
+<span>&copy; 2026 ORION &middot; An Ad Astra Media publication.</span>
+<span class="tag">Signal without panic. Pattern without overclaiming. &middot; AD ASTRA</span>
 </div></div></footer>
 <script>
 /* starfield — faint twinkling stars, pauses when hidden or reduced-motion */
@@ -96,11 +85,11 @@
   if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var c=document.getElementById("stars"),x=c.getContext("2d"),stars=[],W,H,timer=null,t=0;
   function size(){W=c.width=innerWidth;H=c.height=innerHeight;stars=[];
-    for(var i=0;i<Math.min(220,W*H/9000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,
-      r:Math.random()*1.1+.2,p:Math.random()*6.28,s:.4+Math.random()*1.2,
-      c:Math.random()<.12?"212,169,78":Math.random()<.25?"168,216,232":"200,214,230"});}
+    for(var i=0;i<Math.min(240,W*H/8500);i++)stars.push({x:Math.random()*W,y:Math.random()*H,
+      r:Math.random()*1.2+.2,p:Math.random()*6.28,s:.4+Math.random()*1.2,
+      c:Math.random()<.12?"217,164,55":Math.random()<.25?"0,209,255":"201,214,232"});}
   function draw(){t+=.016;x.clearRect(0,0,W,H);
-    for(var i=0;i<stars.length;i++){var s=stars[i],a=.25+.55*Math.abs(Math.sin(t*s.s+s.p));
+    for(var i=0;i<stars.length;i++){var s=stars[i],a=.22+.55*Math.abs(Math.sin(t*s.s+s.p));
       x.fillStyle="rgba("+s.c+","+a.toFixed(2)+")";
       x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill();}}
   size();addEventListener("resize",size);
