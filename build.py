@@ -91,8 +91,9 @@ p{font-size:14.5px;color:var(--ink);max-width:680px}
   border:1px solid rgba(0,209,255,.35);border-radius:4px;padding:2px 8px;margin:2px 4px 2px 0;text-transform:uppercase}
 /* ---------- sample ribbon (honesty) ---------- */
 .sample{border-style:dashed;border-color:rgba(245,166,35,.55)!important}
-.sample-ribbon{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;color:var(--amber);
-  text-transform:uppercase;margin-bottom:10px}
+.sample-ribbon{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.18em;color:var(--amber);
+  text-transform:uppercase;margin-bottom:10px;border:1px solid rgba(245,166,35,.55);border-radius:4px;
+  padding:3px 9px;background:rgba(245,166,35,.07)}
 .sample-ribbon::before{content:"\25C8  "}
 /* ---------- empty / warn ---------- */
 .empty{border:1px dashed var(--line);border-radius:12px;padding:30px 24px;background:rgba(11,27,46,.5);margin-top:8px}
@@ -104,17 +105,18 @@ p{font-size:14.5px;color:var(--ink);max-width:680px}
 .legend .row{display:flex;gap:12px;align-items:flex-start;margin:10px 0;font-size:13.5px;color:var(--dim)}
 .legend .row .badge{flex:none;margin-top:2px}
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;text-align:center;padding:88px 20px 70px;
+.hero{position:relative;overflow:hidden;text-align:center;padding:110px 20px 96px;
+  min-height:min(92vh,780px);display:flex;flex-direction:column;justify-content:center;align-items:center;
   background:
-    radial-gradient(ellipse 130% 55% at 50% 122%, rgba(59,130,246,.30), rgba(59,130,246,.07) 45%, transparent 70%),
-    radial-gradient(ellipse 80% 30% at 50% 116%, rgba(217,164,55,.10), transparent 60%),
-    linear-gradient(180deg,#060b18 0%, #0A1428 60%, #0c1830 100%)}
-.hero .limb{position:absolute;left:-30%;right:-30%;bottom:-46%;height:70%;border-radius:50%;
-  border-top:2px solid rgba(140,190,255,.28);box-shadow:0 -6px 60px rgba(59,130,246,.25), 0 -2px 18px rgba(0,209,255,.18);
-  pointer-events:none}
+    linear-gradient(180deg,rgba(6,11,24,.74) 0%,rgba(6,11,24,.30) 34%,rgba(6,11,24,.16) 55%,rgba(6,11,24,.86) 100%),
+    url(../img/hero-earth.jpg) center 38%/cover no-repeat,
+    linear-gradient(180deg,#060b18,#0A1428)}
 .hero-kicker{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.42em;color:var(--silver);text-transform:uppercase}
-.hero-title{font-size:clamp(58px,15vw,118px);font-weight:800;letter-spacing:.16em;color:var(--gold);
-  margin:14px 0 2px;text-shadow:0 0 50px rgba(217,164,55,.35);line-height:1}
+.hero-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(64px,16vw,128px);font-weight:700;letter-spacing:.18em;
+  margin:16px 0 4px;line-height:1;padding-left:.18em;
+  background:linear-gradient(180deg,#F6E3A6 0%,#E7C25E 35%,#D9A437 60%,#A8742A 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 24px rgba(217,164,55,.32))}
 .hero-sub{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.34em;color:var(--dim);text-transform:uppercase;margin-bottom:22px}
 .hero-tag{font-family:"Playfair Display",serif;font-size:clamp(17px,3.4vw,23px);color:var(--moon);max-width:620px;margin:0 auto 30px;line-height:1.5}
 .hero-cats{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.24em;color:var(--faint);text-transform:uppercase;margin-bottom:30px}
@@ -149,6 +151,7 @@ p{font-size:14.5px;color:var(--ink);max-width:680px}
 .thumb-energy{background:linear-gradient(135deg,#3d2c12,#0B1B2E 70%)}
 .thumb-tech{background:linear-gradient(135deg,#101d3f,#0B1B2E 70%)}
 .thumb-flag{background:linear-gradient(135deg,#2c1a2e,#0B1B2E 70%)}
+.thumb-img{background-size:cover;background-position:center}
 /* ---------- timeline ---------- */
 .tl{position:relative;margin-top:8px;padding-left:26px}
 .tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;
@@ -203,9 +206,9 @@ a{color:var(--cyan)}
 ::selection{background:rgba(217,164,55,.3)}
 @media(max-width:640px){
   .rcard{flex-direction:column}
-  .rcard .thumb{width:100%;min-height:120px}
+  .rcard .thumb{width:100%;min-height:130px}
   .plink .kv{grid-template-columns:1fr}
-  .hero{padding:64px 16px 54px}
+  .hero{padding:72px 16px 60px;min-height:82vh}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -284,6 +287,7 @@ def head(title, desc, path, root):
 <meta property="og:type" content="website">
 <meta property="og:url" content="{url}">
 <meta property="og:site_name" content="ORION">
+<meta property="og:image" content="{SITE}/assets/img/hero-earth.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0A1428">
 {FONTS}
@@ -337,7 +341,7 @@ def page_hero(fname, title, desc, path, active, hero_html, body):
 
 # ------------------------------------------------------------------ HOME
 HOME_HERO = """
-<div class="hero"><div class="limb"></div>
+<div class="hero">
   <div class="hero-kicker">A calmer view of a complex world</div>
   <div class="hero-title">ORION</div>
   <div class="hero-sub">Geopolitical Intelligence Observatory</div>
@@ -403,9 +407,11 @@ REPORT_FILTER_JS = r"""
 </script>
 """
 
-def sample_card(date, cat, catkey, status_badge, title, summary, tags, thumb, icon):
+def sample_card(date, cat, catkey, status_badge, title, summary, tags, thumb, icon, img=None):
+    th = ('<div class="thumb thumb-img" style="background-image:url(\''+img+'\')"></div>' if img
+          else '<div class="thumb '+thumb+'">'+icon+'</div>')
     return ('<article class="rcard sample" data-cat="'+catkey+'">'
-      '<div class="thumb '+thumb+'">'+icon+'</div>'
+      + th +
       '<div class="tbody">'
       '<span class="sample-ribbon">Design sample &mdash; not a real report</span>'
       '<div class="meta"><span>'+date+'</span><span>'+cat+'</span>'+status_badge+'</div>'
@@ -436,15 +442,15 @@ REPORTS = """
 sample_card("2026-07-26","Geopolitics","geopolitics",'<span class="badge st-draft">Draft</span>',
   "ORION SITREP &mdash; 2026-07-26 &mdash; Global Crosscurrents and Strategic Pressure Points",
   "A structured reader of key geopolitical, financial, and strategic developments &mdash; with scenario updates and watchlist changes.",
-  ["GEOPOLITICS","SCENARIOS","WATCHLIST"],"thumb-geo",ICONS["globe"]) + \
+  ["GEOPOLITICS","SCENARIOS","WATCHLIST"],"thumb-geo",ICONS["globe"],"../assets/img/thumb-geopolitics.jpg") + \
 sample_card("2026-07-24","Energy","finance",'<span class="badge st-approved">Approved</span>',
   "Energy Realignment and Maritime Chokepoints",
   "Analysis of recent energy flows, shipping patterns, and regional responses.",
-  ["ENERGY","TRADE","REGIONS"],"thumb-energy",ICONS["drop"]) + \
+  ["ENERGY","TRADE","REGIONS"],"thumb-energy",ICONS["drop"],"../assets/img/thumb-maritime.jpg") + \
 sample_card("2026-07-22","Technology","technology",'<span class="badge st-published">Published</span>',
   "AI Infrastructure and Global Power Competition",
   "Tracking AI infrastructure buildout, semiconductor policy, and strategic implications.",
-  ["AI","SEMICONDUCTORS","GEOPOLITICS"],"thumb-tech",ICONS["cpu"]) + \
+  ["AI","SEMICONDUCTORS","GEOPOLITICS"],"thumb-tech",ICONS["cpu"],"../assets/img/thumb-technology.jpg") + \
 sample_card("2026-07-20","Geopolitics","geopolitics",'<span class="badge g-narrative">Analysis</span>',
   "U.S.&ndash;China Strategic Signaling and Economic Leverage",
   "Recent signaling, economic measures, and regional responses.",
@@ -580,15 +586,25 @@ NET_SVG = """
   <text x="210" y="206" text-anchor="middle" fill="#D9A437" font-family="Playfair Display,serif" font-weight="700" font-size="17" letter-spacing="3">ORION</text>
 </svg>
 """
-def _net_node(x, y, label, color="#00D1FF"):
-    return ('<circle cx="'+str(x)+'" cy="'+str(y)+'" r="27" fill="#0D1830" stroke="'+color+'" stroke-width="1.4"/>'
-      '<circle cx="'+str(x)+'" cy="'+str(y)+'" r="33" fill="none" stroke="'+color+'" stroke-width="0.6" opacity="0.35"/>'
+_NET_PATHS = {
+ "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/>',
+ "chart": '<path d="M4 20V10M10 20V4M16 20v-8M21 20H3"/>',
+ "cpu": '<rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>',
+ "doc": '<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/>',
+ "bank": '<path d="M3 9l9-6 9 6M4 9v10M20 9v10M8 12v5M12 12v5M16 12v5M3 20h18"/>',
+ "users": '<circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3.5 3.5 0 010 7M21 20c0-2.8-1.9-5.1-4.5-5.8"/>',
+}
+def _net_node(x, y, label, icon):
+    return ('<circle cx="'+str(x)+'" cy="'+str(y)+'" r="27" fill="#0D1830" stroke="#D9A437" stroke-width="1.6"/>'
+      '<circle cx="'+str(x)+'" cy="'+str(y)+'" r="33" fill="none" stroke="#D9A437" stroke-width="0.6" opacity="0.35"/>'
+      '<g transform="translate('+str(x-9)+','+str(y-9)+') scale(0.75)" fill="none" stroke="#C9D6E8" '
+      'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'+_NET_PATHS[icon]+'</g>'
       '<text x="'+str(x)+'" y="'+str(y+52)+'" text-anchor="middle" fill="#9FB2CC" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="2">'+label+'</text>')
-_NET_PTS = [(78,92,"GEOPOLITICS"),(342,92,"FINANCE"),(372,238,"TECHNOLOGY"),
-            (48,238,"NARRATIVES"),(110,332,"INSTITUTIONS"),(310,332,"PEOPLE")]
+_NET_PTS = [(78,92,"GEOPOLITICS","globe"),(342,92,"FINANCE","chart"),(372,238,"TECHNOLOGY","cpu"),
+            (48,238,"NARRATIVES","doc"),(110,332,"INSTITUTIONS","bank"),(310,332,"PEOPLE","users")]
 _NET_LINES = "".join('<line x1="210" y1="200" x2="'+str(x)+'" y2="'+str(y)+'" stroke="#33507c" stroke-width="1" opacity="0.8"/>'
-  '<circle cx="'+str((210+x)//2)+'" cy="'+str((200+y)//2)+'" r="2.4" fill="#D9A437" opacity="0.9"/>' for x,y,_ in _NET_PTS)
-_NET_NODES = "".join(_net_node(x,y,l) for x,y,l in _NET_PTS)
+  '<circle cx="'+str((210+x)//2)+'" cy="'+str((200+y)//2)+'" r="2.4" fill="#D9A437" opacity="0.9"/>' for x,y,_,_ in _NET_PTS)
+_NET_NODES = "".join(_net_node(x,y,l,ic) for x,y,l,ic in _NET_PTS)
 NET_SVG = NET_SVG.replace("__LINES__", _NET_LINES).replace("__NODES__", _NET_NODES)
 
 LINK_TYPES = [
@@ -823,13 +839,13 @@ PAGES = [
   "patterns/","Pattern Links",PATTERNS),
  ("template/index.html","SITREP Template \u2014 ORION",
   "The ORION SITREP report template: ten sections, source-graded, draft until approved.",
-  "template/","Reports",TEMPLATE),
+  "template/","",TEMPLATE),
  ("methodology/index.html","Methodology \u2014 ORION",
   "ORION methodology: source grading (confirmed, single-source, narrative), fact vs analysis vs speculation.",
   "methodology/","Methodology",METHODOLOGY),
  ("network/index.html","For the Network \u2014 ORION",
   "What ORION outputs for LUNA, FORTUNA, HEPHAESTUS, and MASTER INDY.",
-  "network/","About",NETWORK),
+  "network/","",NETWORK),
  ("about/index.html","About \u2014 ORION",
   "About ORION: identity, lineage, and its place in the LDI network.",
   "about/","About",ABOUT),

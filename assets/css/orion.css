@@ -79,8 +79,9 @@ p{font-size:14.5px;color:var(--ink);max-width:680px}
   border:1px solid rgba(0,209,255,.35);border-radius:4px;padding:2px 8px;margin:2px 4px 2px 0;text-transform:uppercase}
 /* ---------- sample ribbon (honesty) ---------- */
 .sample{border-style:dashed;border-color:rgba(245,166,35,.55)!important}
-.sample-ribbon{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;color:var(--amber);
-  text-transform:uppercase;margin-bottom:10px}
+.sample-ribbon{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.18em;color:var(--amber);
+  text-transform:uppercase;margin-bottom:10px;border:1px solid rgba(245,166,35,.55);border-radius:4px;
+  padding:3px 9px;background:rgba(245,166,35,.07)}
 .sample-ribbon::before{content:"\25C8  "}
 /* ---------- empty / warn ---------- */
 .empty{border:1px dashed var(--line);border-radius:12px;padding:30px 24px;background:rgba(11,27,46,.5);margin-top:8px}
@@ -92,17 +93,18 @@ p{font-size:14.5px;color:var(--ink);max-width:680px}
 .legend .row{display:flex;gap:12px;align-items:flex-start;margin:10px 0;font-size:13.5px;color:var(--dim)}
 .legend .row .badge{flex:none;margin-top:2px}
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;text-align:center;padding:88px 20px 70px;
+.hero{position:relative;overflow:hidden;text-align:center;padding:110px 20px 96px;
+  min-height:min(92vh,780px);display:flex;flex-direction:column;justify-content:center;align-items:center;
   background:
-    radial-gradient(ellipse 130% 55% at 50% 122%, rgba(59,130,246,.30), rgba(59,130,246,.07) 45%, transparent 70%),
-    radial-gradient(ellipse 80% 30% at 50% 116%, rgba(217,164,55,.10), transparent 60%),
-    linear-gradient(180deg,#060b18 0%, #0A1428 60%, #0c1830 100%)}
-.hero .limb{position:absolute;left:-30%;right:-30%;bottom:-46%;height:70%;border-radius:50%;
-  border-top:2px solid rgba(140,190,255,.28);box-shadow:0 -6px 60px rgba(59,130,246,.25), 0 -2px 18px rgba(0,209,255,.18);
-  pointer-events:none}
+    linear-gradient(180deg,rgba(6,11,24,.74) 0%,rgba(6,11,24,.30) 34%,rgba(6,11,24,.16) 55%,rgba(6,11,24,.86) 100%),
+    url(../img/hero-earth.jpg) center 38%/cover no-repeat,
+    linear-gradient(180deg,#060b18,#0A1428)}
 .hero-kicker{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.42em;color:var(--silver);text-transform:uppercase}
-.hero-title{font-size:clamp(58px,15vw,118px);font-weight:800;letter-spacing:.16em;color:var(--gold);
-  margin:14px 0 2px;text-shadow:0 0 50px rgba(217,164,55,.35);line-height:1}
+.hero-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(64px,16vw,128px);font-weight:700;letter-spacing:.18em;
+  margin:16px 0 4px;line-height:1;padding-left:.18em;
+  background:linear-gradient(180deg,#F6E3A6 0%,#E7C25E 35%,#D9A437 60%,#A8742A 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 24px rgba(217,164,55,.32))}
 .hero-sub{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.34em;color:var(--dim);text-transform:uppercase;margin-bottom:22px}
 .hero-tag{font-family:"Playfair Display",serif;font-size:clamp(17px,3.4vw,23px);color:var(--moon);max-width:620px;margin:0 auto 30px;line-height:1.5}
 .hero-cats{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.24em;color:var(--faint);text-transform:uppercase;margin-bottom:30px}
@@ -137,6 +139,7 @@ p{font-size:14.5px;color:var(--ink);max-width:680px}
 .thumb-energy{background:linear-gradient(135deg,#3d2c12,#0B1B2E 70%)}
 .thumb-tech{background:linear-gradient(135deg,#101d3f,#0B1B2E 70%)}
 .thumb-flag{background:linear-gradient(135deg,#2c1a2e,#0B1B2E 70%)}
+.thumb-img{background-size:cover;background-position:center}
 /* ---------- timeline ---------- */
 .tl{position:relative;margin-top:8px;padding-left:26px}
 .tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;
@@ -191,9 +194,9 @@ a{color:var(--cyan)}
 ::selection{background:rgba(217,164,55,.3)}
 @media(max-width:640px){
   .rcard{flex-direction:column}
-  .rcard .thumb{width:100%;min-height:120px}
+  .rcard .thumb{width:100%;min-height:130px}
   .plink .kv{grid-template-columns:1fr}
-  .hero{padding:64px 16px 54px}
+  .hero{padding:72px 16px 60px;min-height:82vh}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
