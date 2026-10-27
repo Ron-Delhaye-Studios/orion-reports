@@ -5,7 +5,7 @@ Midnight Navy #0A1428 / Obsidian #0B1B2E / Slate #162A44 / Star Silver #C9D6E8 /
 Moon White #EAF2FF / Quiet Gold #D9A437 / Cyan #00D1FF / Electric #3B82F6 /
 Indigo #4B5CF6 / Alert Red #EF4444. Playfair Display / Inter / JetBrains Mono.
 Tagline: "Signal without panic. Pattern without overclaiming." AD ASTRA."""
-import os, json
+import os, json, hashlib
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://ron-delhaye-studios.github.io/orion-reports"
@@ -291,7 +291,7 @@ def head(title, desc, path, root):
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0A1428">
 {FONTS}
-<link rel="stylesheet" href="{root}assets/css/orion.css">
+<link rel="stylesheet" href="{root}assets/css/orion.css?v={hashlib.sha256(CSS.encode()).hexdigest()[:12]}">
 <script src="{root}assets/js/analytics-config.js" defer></script>
 <script src="{root}assets/js/analytics.js" defer></script>
 </head>
