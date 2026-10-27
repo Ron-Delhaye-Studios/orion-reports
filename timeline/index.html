@@ -25,44 +25,7 @@
 <a class="brand" href="../"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="13.5" stroke="#D9A437" stroke-width="1.4"/><circle cx="16" cy="16" r="9.5" stroke="#D9A437" stroke-width="0.7" opacity="0.5"/><path d="M16 7l2.1 6.9L25 16l-6.9 2.1L16 25l-2.1-6.9L7 16l6.9-2.1z" fill="#D9A437"/></svg><span class="wm">ORION<small>GEOPOLITICAL INTELLIGENCE OBSERVATORY</small></span></a>
 <a class="nl" href="../">Observatory</a><a class="nl" href="../reports/">Reports</a><a class="nl on" href="../timeline/">Timeline</a><a class="nl" href="../watchlist/">Watchlist</a><a class="nl" href="../watchlist/#scenarios">Scenarios</a><a class="nl" href="../patterns/">Pattern Links</a><a class="nl" href="../methodology/">Methodology</a><a class="nl" href="../about/">About</a></div></nav>
 <div class="wrap">
-
-<header class="page">
-  <div class="eyebrow">Timeline</div>
-  <h1>Global Timeline</h1>
-  <p class="lede">Events. Context. Connections. One shared log &mdash; ORION files geopolitical events, FORTUNA files market events.</p>
-</header>
-<section class="blk">
-  <h2 class="sec">Events</h2>
-  <div id="feed"><div class="empty"><div class="t">LOADING ARCHIVE&hellip;</div></div></div>
-  <div class="empty" style="margin-top:18px">
-    <div class="t">TIMELINE OPENS WITH VERIFIED EVENTS</div>
-    <p>No further events filed yet. The timeline fills as ORION and FORTUNA record verified events &mdash; each source-graded, each linked where the evidence supports it.</p>
-  </div>
-</section>
-<script>
-fetch("events.json").then(function(r){return r.json();}).then(function(d){
-  var f=document.getElementById("feed");
-  if(!d.events||!d.events.length){f.innerHTML='<div class="empty"><div class="t">ARCHIVE EMPTY</div><p>No events filed yet.</p></div>';return;}
-  f.innerHTML='<div class="tl">'+d.events.map(function(e){
-    var g=e.source_grade==="confirmed"?"g-confirmed":e.source_grade==="narrative"?"g-narrative":"g-single";
-    var st=e.status==="published"?'<span class="badge st-published">Published</span>'
-      :e.status==="approved"?'<span class="badge st-approved">Approved</span>'
-      :e.status==="awaiting"?'<span class="badge st-awaiting">Awaiting approval</span>'
-      :'<span class="badge st-draft">Draft</span>';
-    var tags=(e.narrative_tags||[]).map(function(t){return '<span class="chip">'+t+'</span>';}).join("");
-    var actors=(e.actors||[]).map(function(a){return '<span class="actor">'+a+'</span>';}).join("");
-    return '<div class="tl-item"><div class="tl-date">'+e.occurred_at.slice(0,10)+'</div>'
-      +'<div class="tl-card"><div class="top">'+st+'<span class="badge '+g+'">'+e.source_grade+'</span></div>'
-      +'<h3>'+e.title+'</h3><p>'+e.summary+'</p>'
-      +'<div class="meta">ORIGIN: '+e.origin.toUpperCase()+' &middot; REGIONS: '+(e.regions||[]).join(", ")+'</div>'
-      +'<div style="margin-top:8px">'+actors+'</div>'
-      +'<div class="chips">'+tags+'</div></div></div>';
-  }).join("")+'</div>';
-}).catch(function(){
-  document.getElementById("feed").innerHTML='<div class="empty"><div class="t">ARCHIVE UNAVAILABLE</div><p>Could not load the event archive.</p></div>';
-});
-</script>
-
+<header class="page"><div class="eyebrow">Event archive</div><h1>Global Timeline</h1><p class="lede">Dated geopolitical events with explicit source grades and direct evidence links.</p><p class="dim" style="margin-top:10px">October 27 publication. These records are a static edition of the archive; live market data is not connected.</p></header><section class="blk"><div class="tl"><article class="tl-item"><div class="tl-date">2026-10-27</div><div class="tl-card"><div class="top"><span class="badge st-published">Published</span><span class="badge g-single">Single-source</span></div><h2>Local humanitarian ceasefire begins</h2><p>See the source record and SITREP for context.</p><p style="margin-top:10px"><a class="source-ref" href="../reports/2026-10-27/#S02">[S02]</a></p></div></article><article class="tl-item"><div class="tl-date">2026-10-26</div><div class="tl-card"><div class="top"><span class="badge st-published">Published</span><span class="badge g-single">Single-source</span></div><h2>Regional delegations meet in Tehran</h2><p>See the source record and SITREP for context.</p><p style="margin-top:10px"><a class="source-ref" href="../reports/2026-10-27/#S01">[S01]</a></p></div></article><article class="tl-item"><div class="tl-date">2026-10-26</div><div class="tl-card"><div class="top"><span class="badge st-published">Published</span><span class="badge g-single">Single-source</span></div><h2>UK announces 15 Sudan designations</h2><p>primary official action verified; multiple UK pages are one source origin</p><p style="margin-top:10px"><a class="source-ref" href="../reports/2026-10-27/#S05">[S05]</a> <a class="source-ref" href="../reports/2026-10-27/#S11">[S11]</a></p></div></article><article class="tl-item"><div class="tl-date">2026-10-25</div><div class="tl-card"><div class="top"><span class="badge st-published">Published</span><span class="badge g-single">Single-source</span></div><h2>Student-backed list wins Serbian parliamentary election</h2><p>Reuters and CNN corroborate headline; independent underlying reporting not fully audited</p><p style="margin-top:10px"><a class="source-ref" href="../reports/2026-10-27/#S08">[S08]</a> <a class="source-ref" href="../reports/2026-10-27/#S10">[S10]</a></p></div></article><article class="tl-item"><div class="tl-date">2026-10-25</div><div class="tl-card"><div class="top"><span class="badge st-published">Published</span><span class="badge g-single">Single-source</span></div><h2>Lula wins Brazil election; result challenged politically</h2><p>Multiple outlets; original electoral record not retrieved; fraud not established</p><p style="margin-top:10px"><a class="source-ref" href="../reports/2026-10-27/#S09">[S09]</a> <a class="source-ref" href="../reports/2026-10-27/#S10">[S10]</a></p></div></article></div><p class="dim">Event dates have day precision. No market-causation links have been asserted in this edition.</p></section>
 </div>
 <footer><div class="wrap"><div class="rule">
 <span>&copy; 2026 ORION &middot; An Ad Astra Media publication.</span>

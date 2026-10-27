@@ -202,3 +202,18 @@ a{color:var(--cyan)}
   html{scroll-behavior:auto}
   *{transition:none!important}
 }
+
+/* Published intelligence: readable long-form sections and source navigation. */
+.briefing{max-width:800px}.briefing h2{font-size:clamp(22px,4vw,30px);line-height:1.35;margin-bottom:20px}
+.briefing p{margin:14px 0;max-width:76ch}.briefing ul{padding-left:24px}.briefing li{margin:12px 0}
+.briefing table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:20px 0}
+.briefing th,.briefing td{border:1px solid var(--line);padding:12px;text-align:left;vertical-align:top;min-width:130px;font-size:13px}
+.report-toc{margin:30px 0;padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.report-toc h2{font-size:20px;margin-bottom:12px}.report-toc ol{padding-left:24px;columns:2;column-gap:32px}
+.report-toc li{break-inside:avoid;margin-bottom:9px;font-size:13px}.report-toc a{color:var(--silver)}
+.source-list{padding-left:24px;max-width:800px}.source-list li{margin:22px 0;overflow-wrap:anywhere}
+.source-list p{font-size:13px}.source-ref{font-size:.85em;white-space:nowrap}
+.card p+p{margin-top:10px}.card b{color:var(--silver)}
+[id]{scroll-margin-top:95px}a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+@media(max-width:640px){.report-toc ol{columns:1}.report-toc{padding:18px}.briefing th,.briefing td{min-width:125px}}
+@media print{#stars,nav.top,.report-toc{display:none}body{color:#111;background:white}.wrap{max-width:none}p,h1,h2,h3,.dim{color:#111!important}a{color:#14528a}section.blk{break-inside:auto}.card{background:white;border:1px solid #ccc}.badge{color:#111}footer{background:white}}

@@ -1,6 +1,94 @@
 {
   "events": [
     {
+      "id": "ORION-20261027-OLESHKY",
+      "occurred_at": "2026-10-27T00:00:00Z",
+      "date_precision": "day",
+      "origin": "orion",
+      "title": "Local humanitarian ceasefire begins",
+      "summary": "See the source record and SITREP for context.",
+      "actors": [],
+      "regions": [],
+      "narrative_tags": [],
+      "event_type": "geopolitical",
+      "source_grade": "single-source",
+      "sources": [
+        "https://apnews.com/article/russia-ukraine-war-trump-f26143c32e4673686381d0ff87225720"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "ORION-20261026-TEHRAN",
+      "occurred_at": "2026-10-26T00:00:00Z",
+      "date_precision": "day",
+      "origin": "orion",
+      "title": "Regional delegations meet in Tehran",
+      "summary": "See the source record and SITREP for context.",
+      "actors": [],
+      "regions": [],
+      "narrative_tags": [],
+      "event_type": "geopolitical",
+      "source_grade": "single-source",
+      "sources": [
+        "https://apnews.com/article/iran-israel-us-war-10-26-2026-36486edb61b3bf4e0df67e8a17123e44"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "ORION-20261026-SUDAN",
+      "occurred_at": "2026-10-26T00:00:00Z",
+      "date_precision": "day",
+      "origin": "orion",
+      "title": "UK announces 15 Sudan designations",
+      "summary": "primary official action verified; multiple UK pages are one source origin",
+      "actors": [],
+      "regions": [],
+      "narrative_tags": [],
+      "event_type": "geopolitical",
+      "source_grade": "single-source",
+      "sources": [
+        "https://www.gov.uk/government/news/uk-sanctions-senior-commanders-implicated-in-campaign-of-rape-in-sudan-and-unveils-new-support-for-survivors",
+        "https://www.gov.uk/guidance/sudan-list-of-designations-and-sanctions-notices"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "ORION-20261025-SERBIA",
+      "occurred_at": "2026-10-25T00:00:00Z",
+      "date_precision": "day",
+      "origin": "orion",
+      "title": "Student-backed list wins Serbian parliamentary election",
+      "summary": "Reuters and CNN corroborate headline; independent underlying reporting not fully audited",
+      "actors": [],
+      "regions": [],
+      "narrative_tags": [],
+      "event_type": "geopolitical",
+      "source_grade": "single-source",
+      "sources": [
+        "https://www.aol.com/articles/vucic-defeat-serbia-waits-see-100401000.html",
+        "https://transcripts.cnn.com/show/cnr/date/2026-10-26/segment/18"
+      ],
+      "status": "published"
+    },
+    {
+      "id": "ORION-20261025-BRAZIL",
+      "occurred_at": "2026-10-25T00:00:00Z",
+      "date_precision": "day",
+      "origin": "orion",
+      "title": "Lula wins Brazil election; result challenged politically",
+      "summary": "Multiple outlets; original electoral record not retrieved; fraud not established",
+      "actors": [],
+      "regions": [],
+      "narrative_tags": [],
+      "event_type": "geopolitical",
+      "source_grade": "single-source",
+      "sources": [
+        "https://www.aol.com/articles/trump-says-without-citing-evidence-200051000.html",
+        "https://transcripts.cnn.com/show/cnr/date/2026-10-26/segment/18"
+      ],
+      "status": "published"
+    },
+    {
       "id": "seed-orion-architecture-20260726",
       "occurred_at": "2026-07-26T00:00:00Z",
       "origin": "orion",

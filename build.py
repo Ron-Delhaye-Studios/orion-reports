@@ -318,7 +318,8 @@ FOOT = """<footer><div class="wrap"><div class="rule">
 </html>"""
 
 def page(fname, title, desc, path, active, body):
-    root = "../" if "/" in fname else ""
+    relative = os.path.relpath(OUT, os.path.dirname(os.path.join(OUT, fname)))
+    root = "" if relative == "." else relative.replace(os.sep, "/") + "/"
     html = (head(title, desc, path, root) + nav(active, root) +
             '<div class="wrap">\n' + body + "\n</div>\n" +
             FOOT.replace("/*STARFIELD*/", STARFIELD))
@@ -867,6 +868,8 @@ EVENTS = {"events": [{
 }]}
 
 def main():
+    from publication import apply_publication
+    apply_publication(globals())
     os.makedirs(os.path.join(OUT, "assets", "css"), exist_ok=True)
     open(os.path.join(OUT, "assets", "css", "orion.css"), "w").write(CSS)
     page_hero("index.html",
@@ -882,3 +885,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
